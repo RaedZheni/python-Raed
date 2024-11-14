@@ -17,10 +17,10 @@ a = 5
 b = 2
 somme = a + b 
 produit = a * b 
-quotient + a / b 
+quotient = a / b 
 reste = a % b 
 puissance = a ** b 
-print(somme, produit, quotient, rese, puissance)
+print(somme, produit, quotient, reste, puissance)
 
 # 4. Conditions (if/else)
 
@@ -42,16 +42,81 @@ for i in range (5):
 
 
 compteur = 10
-while computer < 5:
+while compteur < 5:
     print ("Compteur :", compteur)
     compteur += 1 
 
 # 6. Fonction :
 
-def salut(nom)
+def salut(nom):
     return f"salut, {nom}!"
     
 message = salut ("Alice")
 print(message)
 
 # 7. Listes:
+
+fruits = ["pomme", "banane", "orange"]
+print(fruits)
+fruits.append("mangue") # Ajouter un élément
+print(fruits[1]) # Accéder à un élément
+# 8. Dictionnaires
+
+personne = {"nom": "Alice", "age": 25, "ville": "Paris"}
+print(personne["nom"])
+personne["profession"] = "Ingénieur"
+print(personne)
+
+# 9. Boucle sur une liste ou un dictionnaire :
+
+# Liste :
+
+
+for fruit in fruits:
+    print(fruit)
+
+# Dictionnaire : 
+
+
+for cle, valeur in personne.items():
+    print(cle, ":", valeur)
+
+# 10. Gestion des erreurs (try/except) :
+
+try:
+     resultat = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zéro !")
+
+# 11. Entrée utilisateur
+
+nom = input ("Quel est ton nom ?")
+print("Bonjour,", nom)
+
+# 12. Lire et écrire dans un fichier :
+
+# Ecrire dans un fichier :
+
+
+with open ("mon_fichier.txt", "w") as fichier:
+    fichier.write("Ceci est un texte écrit dans un fichier.")
+    
+# Lire un fichier :
+
+
+with open("mon_fichier.txt", "r") as fichier:
+    contenu = fichier.read()
+    print(contenu)
+    
+# 13. Classes et objects (POO - Programmation Orientée Objet)
+
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age 
+        
+    def se_presenter(self):
+        print(f"Bonjour, je m'appelle {self.nom} et j'ai {self.age} ans.")
+        
+personne1 = Personne("Alice", 25)
+personne1.se_presenter()
